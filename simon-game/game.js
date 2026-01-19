@@ -2,11 +2,16 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
 var level = 0;
-$(document).keypress(function (event) {
-    if (level === 0) {
-        nextSequence()
-    }
-});
+
+function startGame() {
+  if (level === 0) {
+    nextSequence();
+  }
+}
+
+$(document).keypress(startGame);
+$(document).on("pointerdown", startGame);
+
   
 
 
